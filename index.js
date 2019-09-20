@@ -14,12 +14,12 @@ const hash = (dir, type, out) => {
 			return Promise.all(wait);
 		}
 		return new Promise((resolve, reject) => {
-			let hash = crypto.createHash(type);
-			fs.createReadStream(dir).pipe(hash)
-				.on('error', err => reject(err))
-				.on('finish', () => resolve(hash.read()));
-		}).then((hash) => {
-			out[dir] = hash.toString('hex');
+			let h = crypto.createHash(type);
+			fs.createReadStream(dir).pipe(h)
+				.on('error', (err) => reject(err))
+				.on('finish', () => resolve(h.read()));
+		}).then((h) => {
+			out[dir] = h.toString('hex');
 		});
 	}).catch((e) => {
 		return e;
@@ -36,9 +36,14 @@ module.exports = (dir, raw = false, type = 'sha256') => {
 		for (let i in out) {
 			o.push({i: i, data: out[i]});
 		}
-		o = JSON.stringify(o.sort((a, b) => (a.i > b.i) ? 1 : ((b.i > a.i) ? -1 : 0)));
-		const hash = crypto.createHash('sha256');
-		hash.update(o);
-		return hash.digest('hex');
+		o = JSON.stringify(o.sort((a, b) => {
+			if (a.i > b.i) {
+				return 1;
+			}
+			return (b.i > a.i) ? -1 : 0;
+		}));
+		const h = crypto.createHash('sha256');
+		h.update(o);
+		return h.digest('hex');
 	});
 };
