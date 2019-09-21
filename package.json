@@ -14,7 +14,9 @@
 		"eslint-config-basic": "git+https://git@github.com/anzerr/eslintrc.git"
 	},
 	"dependencies": {
-		"fs.promisify": "git+https://git@github.com/anzerr/fs.promisify.git"
+		"fs.promisify": "git+https://git@github.com/anzerr/fs.promisify.git",
+		"promise.util": "git+https://git@github.com/anzerr/promise.util.git",
+		"type.util": "git+https://github.com/anzerr/type.util.git"
 	},
 	"eslintConfig": {
 		"extends": "eslint-config-basic"
