@@ -3,7 +3,7 @@ const hash = require('./index.js'),
 	assert = require('assert');
 
 hash('./index.js').then((res) => {
-	assert.equal(res, '92e31003d5eb291df165047484731e640e08db0422c34efbd9c706141d1304b2');
+	assert.equal(res, '06dea52826eb8e810458ce7fe3f2cfbefffd6b6022350e711dad8456d53fc12f');
 }).catch((err) => {
 	console.log(err);
 	process.exit(1);
