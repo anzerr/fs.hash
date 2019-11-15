@@ -15,7 +15,7 @@ class Util {
 		});
 	}
 
-	hashJson(data) {
+	hashJson(data, type) {
 		let o = [];
 		for (let i in data) {
 			o.push({i: i, data: data[i]});
@@ -26,7 +26,7 @@ class Util {
 			}
 			return (b.i > a.i) ? -1 : 0;
 		}));
-		const h = crypto.createHash('sha256');
+		const h = crypto.createHash(type);
 		h.update(o);
 		return h;
 	}

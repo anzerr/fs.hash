@@ -16,8 +16,7 @@ npm install --save @anzerr/fs.hash
 ``` javascript
 const hash = require('fs.hash');
 
-// file, raw, hash type
-hash('./node_modules', false, 'sha256').then((res) => {
+hash('./node_modules', {raw: true, max: 5, type: 'sha256'}).then((res) => {
 	console.log(res);
 });
 ```
