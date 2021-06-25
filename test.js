@@ -20,11 +20,11 @@ const test = (type, value) => {
 
 test('sha256', [
 	'7fc583efb73c67edc77138f05430605091cfea33deb7614a50f3ee520fca04a8',
-	'0d4c58014554602a8bb74015c6f0c5b1c4520ab891e32a7aaf6ee4f23fc672cb'
+	'5d524a3adc4e4b4a0f5f6f423d44d3bec1463e9f8aa4fa1814b08b0fd727988e'
 ]).then(() => {
 	return test('sha1', [
 		'4037abd730e09292cea9b2f65f3c6793e3b50238',
-		'cb6ccc84224424ee0391dcdafe38e696805df5ed'
+		'985d32568ab85eb147819cea74bc9850ff4b1437'
 	]);
 }).catch((err) => {
 	console.log(err);
