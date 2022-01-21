@@ -1,6 +1,6 @@
 {
 	"name": "fs.hash",
-	"version": "1.0.15",
+	"version": "1.0.16",
 	"description": "util to hash directories or files",
 	"keywords": [
 		"fs",
